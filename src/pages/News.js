@@ -26,6 +26,11 @@ const NewsItemTitle = styled.h4`
   margin: 0;
   padding: 0;
 `;
+
+const NewsItemContent = styled.div`
+  margin: 0;
+  padding: 0;
+`;
 const NewsItemDate = styled.div`
   font-size: 12px;
   margin-top: 10px;
@@ -46,8 +51,8 @@ const News = ({
       const response = await axiosGeneral.get('/news');
       const {data,status} = response;
       if(status === 200)
-        setNews(data);
-      console.log(data);
+        setNews(data.data);
+      console.log(data.data);
     } catch (error) {
       console.error(error);
     }
@@ -60,7 +65,8 @@ const News = ({
       {news.map((item, index) => (
         <NewsItem key={index}>
           <NewsItemTitle>{item.title}</NewsItemTitle>
-          <NewsItemDate>{item.date}</NewsItemDate>
+          <NewsItemDate>{item.created_at}</NewsItemDate>
+          <NewsItemContent>{item.content}</NewsItemContent>
         </NewsItem>
       ))}
     </Wrapper>
