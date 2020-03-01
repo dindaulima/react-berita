@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../assets/css/App.css';
 import styled from "styled-components";
 import { 
   Container,
@@ -12,7 +11,6 @@ const Title = styled.h1`
   color: black;
   padding: 20px;
 `;
-
 
 const FormRegis = styled.div`
   background: #fff;
@@ -63,12 +61,7 @@ function RegisForm({ addData }) {
         <form onSubmit={handleSubmit}>
           <Row>
             <Col>
-              <Title>Registrasi</Title>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p>Sign up to see news from all over the world</p>
+              <Title>Berita</Title>
             </Col>
           </Row>
             <Row>
@@ -87,20 +80,7 @@ function RegisForm({ addData }) {
             </Row>
             <Row>
               <Col>
-                <DataItem>
-                  <input type="password" className="input form-control" value={data.confpassword} name="confpassword" placeholder="Retype Password" onChange={e => setValue(e.target.value)}/>
-                </DataItem>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Button className="button" onClick={handleSubmit}>Sign up</Button>
-              </Col>
-            </Row>
-
-            <Row>
-              <Col>
-                <p>By signing up, you agree to our Terms , Data Policy and Cookies Policy .</p>
+                <Button className="button" onClick={handleSubmit}>Log in</Button>
               </Col>
             </Row>
         </form>
@@ -125,9 +105,9 @@ function Signup(){
 
   return (
     <div className="App">
-    <Container>
-      <RegisForm addData={addData} />
-    </Container>
+      <Container>
+        <RegisForm addData={addData} />
+      </Container>
     </div>
   )
 };

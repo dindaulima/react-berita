@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/css/App.css';
 import Signup from './Signup';
-import List from './List';
+import Login from './Login';
 
 function App() {
   return (
